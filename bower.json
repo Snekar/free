@@ -15,6 +15,7 @@
     "tests"
   ],
   "dependencies": {
-    "swiper": "^3.4.2"
+    "swiper": "^3.4.2",
+    "jquery": "^3.2.1"
   }
 }
