@@ -1,0 +1,21 @@
+{
+  "name": "free",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "faner11 <fan233333@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/faner11/free",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "swiper": "^3.4.2",
+    "jquery": "^3.2.1"
+  }
+}
