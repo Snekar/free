@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.foot {
+  width: 100%;
+  height: 6em;
+  line-height: 6em;
+  padding: 0 1em;
+  background: #ce3d3a;
+}
+.foot .logo {
+  height: 100%;
+}
+.foot .logo p {
+  float: left;
+  color: #fff;
+  font-size: 2.5em;
+}
+.foot .logo .icon-xinxinicon {
+  color: #fff;
+  float: left;
+  font-size: 2.5em;
+}
+.foot .logo .icon-category {
+  color: #fff;
+  float: right;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.bar li {
+  text-align: center;
+  width: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  border-bottom: 1px solid #adaeb3;
+}
+.bar li a {
+  padding: 0.6em 0;
+  color: #000;
+  text-decoration: none;
+  font-size: 1.6em;
+}
+
+/*# sourceMappingURL=1.css.map */
