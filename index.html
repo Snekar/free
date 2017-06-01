@@ -3,19 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .sou{
+            width: 300px;
+            border: 1x;
+        }
+        .sou ul li{
+
+        }
+    </style>
 </head>
 <body>
 <input type="text">
 <button>asda</button>
+<div class="sou" id="sou">
+    <ul>
+        <li>
+
+        </li>
+    </ul>
+</div>
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <script>
     $('input').on('input',function () {
         var str = $(this).val();
         $.ajax({
-            url:"http://api.dagoogle.cn/music/music",
-            data:{filename:str},
+            type:'GET',
+            url:"http://api.dagoogle.cn/music/search",
+            data:{keyword:str},
             dataType:'jsonp',
-            jsonpCallback:'misicname',
+            jsonp:'callback',
+            jsonpCallback:'fn',
+            success:function (res) {
+                console.log(res);
+                let data = res.data;
+                $.each(data,function (index,itme) {
+
+                })
+            }
         })
     })
 
