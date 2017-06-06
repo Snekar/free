@@ -7,7 +7,8 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link rel="stylesheet" type="text/css" href="css/main.css"/>
 		<link rel="stylesheet" type="text/css" href="font/iconfont.css"/>
-		<link rel="stylesheet" type="text/css" href="scss/swiper.min.css"/>
+		<link rel="stylesheet" href="bower_components/swiper/dist/css/swiper.min.css">
+		<script src="js/lb.js"></script>
 	</head>
 	<body>
 		<div class="foot">
@@ -23,10 +24,11 @@
 			<li><a href="javaspert:;">歌曲榜</a></li>
 			<li><a href="javaspert:;">搜索</a></li>
 		</ul>
-		<div>
+		<div class="swiper-container wrapper" id="lbb">
+			<div class="swiper-wrapper">
 <!--推荐音乐-->			
-			<div>
-				<div class="swiper-container">
+			<div class="swiper-slide">
+				<div class="swiper-container" id="lba">
 					<div class="swiper-wrapper">
 						<div class="swiper-slide">
 							<img src="image/swiper1.jpg"/>
@@ -89,7 +91,7 @@
 			</div>
 <!--推荐音乐结束-->
 <!--音乐榜单开始-->	
-			<div class="yybd">
+			<div class="yybd swiper-slide">
 				<ul class="bd">
 					<li>
 						<a href="javascript:;"><img src="image/xingebang.jpg"/></a>
@@ -107,60 +109,51 @@
 			</div>
 <!--音乐榜单结束-->
 <!--音乐搜索开始-->
-			<div>
-				<div class="bg-s">
-			<!--
-            	作者：offline
-            	时间：2017-06-05
-            	描述：搜索框
-            -->
-			<div class="ipt-s">
-				<i class="iconfont icon-search"></i>
-				<input class="ipt-k"  type="text" placeholder="搜索歌曲、歌手、专辑" >
-			</div>
-			<!--
-            	作者：offline
-            	时间：2017-06-05
-            	描述：热搜
-            -->
-			<div class="push">
-				<section class="sec">
-				<h3>热门搜索</h3>
-				<ul>
-					<li><a href="javaspert:;">童话镇</a></li>
-					<li><a href="javaspert:;">童话镇</a></li>
-					<li><a href="javaspert:;">童话镇</a></li>
-					<li><a href="javaspert:;">童话镇</a></li>
-					<li><a href="javaspert:;">童话镇</a></li>
-					<li><a href="javaspert:;">童话镇</a></li>
-					<li><a href="javaspert:;">童话镇</a></li>
-				</ul>
-				</section>
-			</div>
-			<!--
-            	作者：offline
-            	时间：2017-06-05
-            	描述：搜索显示
-            -->
-			<div class="record">
-				<ul>
-					<li>1</li>
-					<li>2</li>
-					<li>3</li>
-				</ul>
+			<div class="bg-s swiper-slide">
+			<!--描述：搜索框-->
+				<div class="ipt-s">
+					<i class="iconfont icon-search"></i>
+					<input class="ipt-k" id="ssk" type="text" placeholder="搜索歌曲、歌手、专辑" >
+				</div>
+			<!--描述：热搜-->
+				<div class="push">
+					<section class="sec">
+					<h3>热门搜索</h3>
+					<ul>
+						<li><a href="javaspert:;">童话镇</a></li>
+						<li><a href="javaspert:;">童话镇</a></li>
+						<li><a href="javaspert:;">童话镇</a></li>
+						<li><a href="javaspert:;">童话镇</a></li>
+						<li><a href="javaspert:;">童话镇</a></li>
+						<li><a href="javaspert:;">童话镇</a></li>
+						<li><a href="javaspert:;">童话镇</a></li>
+					</ul>
+					</section>
+				</div>
+			<!--描述：搜索显示-->
+				<div class="record">
+					<ul class="recUl">
+						<li>1</li>
+						<li>2</li>
+						<li>3</li>
+					</ul>
+				</div>
 			</div>
 		</div>
-		<div class="container"></div>
-		<!--
-        	作者：offline
-        	时间：2017-06-05
-        	描述：右滑栏
-        -->
+<!--右滑栏开始-->
+		<div class="yhl">
+
+			<div class="container"></div>
+			<!--
+				作者：offline
+				时间：2017-06-05
+				描述：右滑栏
+			-->
 			<div class="slide">
 				<div class="slide-h">
-					<img src="img/timg.jpg" />
+					<img src="image/timg.jpg" />
 					<p>baron</p>
-					
+
 				</div>
 				<div class="slide-s">
 					<ul>
@@ -171,16 +164,15 @@
 						<li><a href="javaspert:;">朋友</a></li>
 						<li>52</li>
 					</ul>
-				</div>	
+				</div>
 				<ul class="slide-f">
 					<li><a><i class="iconfont icon-form"></i>我的歌单</a></li>
 					<li><a><i class="iconfont icon-process"></i>我的音乐圈</a></li>
 					<li><a><i class="iconfont icon-set"></i>个人设置</a></li>
 				</ul>
 			</div>
-			</div>
-			</div>
-		
+		</div>
+<!--右滑栏结束-->
 		<script src="bower_components/jquery/dist/jquery.min.js"></script>			
 		<script src="bower_components/swiper/dist/js/swiper.jquery.min.js"></script>
 		<script src="js/search.js"></script>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .odiv{
+            position: relative;
+            width: 400px;
+            height: 600px;
+            background: rgba(87, 231, 135, 0.15);
+            overflow: hidden;
+        }
+        .oul{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transition: 0.5s;
+        }
+        .oul li{
+            list-style: none;
+            width: 100%;
+            height: 30px;
+            text-align: center;
+        }
+        .active{
+            color: red;
+        }
+    </style>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+<audio src="music/费玉清%20-%20一剪梅.mp3" id="bfq" controls></audio>
+
+<div class="odiv">
+    <ul class="oul"></ul>
+</div>
+<script>
+$.ajax({
+    url:"music/一剪梅.lrc",
+    type:'POST',
+    success:function (lrc) {
+        var lrcy = pun(lrc);
+        var lycStr = "";
+        $.each(lrcy,function (index,itme) {
+            lycStr += `<li datc="${index}">${itme}</li>`;
+        });
+        $('.oul').html(lycStr);
+        $('#bfq').on('canplay',function () {
+            var gqcd = $(this)[0].duration;    //音频长度
+        });
+        var oul = $(".oul"),ali =$(".oul li");
+        $('#bfq').on('timeupdate',function () {
+
+            var dqcd = Math.round(this.currentTime);     //当前播放时常
+
+            ali.each(function (index) {
+                if (dqcd===parseInt($(this).attr("datc"))){
+                    ali.attr("class","");
+                    a = parseInt($(this).height());
+                    $(this).addClass("active");
+                    oul.css("marginTop",-index*a+"px");
+            }
+            })
+        })
+        console.log(lycStr)
+    }
+})
+
+    function pun(lrc) {
+       var lyrics = lrc.split("\n");
+       var lyrobj = {};
+       $.each(lyrics,function (index,itme) {
+           let timeReg = /\[\d*:\d*((\.|\:)\d*)*\]/g;
+           let timeRedArr = itme.match(timeReg);
+           var clause = itme.replace(timeReg,'');
+           $.each(timeRedArr,function (index,itme) {
+               var min = Number(String(itme.match(/\[\d*/i)).slice(1));
+               var sec = Number(String(itme.match(/\:\d*\.\d{2}/i)).slice(1));
+
+               console.log(Math.round(sec),sec)
+               var time =min*60+Math.round(sec);
+               lyrobj[time] = clause;
+           });
+    });
+        return lyrobj;
+}
+
+
+
+//$('#bfq').on('timeupdate',function () {
+//    var dqcd = Math.round(this.currentTime)     //当前播放时常
+//    console.log(dqcd)
+//
+//})
+
+
+</script>
+</body>
+</html>
