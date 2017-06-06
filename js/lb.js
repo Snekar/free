@@ -5,13 +5,19 @@
 
  var zthd = new Swiper ('#lbb', {
      resistanceRatio : 0,
+     onSlideChangeStart:function () {
+     },
  })
-
+console.log(zthd)
+ $(".bar li").on("touchstart",function (e) {
+     e.preventDefault();
+     zthd.slideTo($(this).index());
+ });
 
 
 // 搜索框
- $('#ssk').on('input',function () {
-     var str = $(this).val();
+ $('#cmsj').on('touchstart',function () {
+     var str = $("#ssk").val();
      $.ajax({
          type:'GET',
          url:"http://api.dagoogle.cn/music/music-and-lrc",
