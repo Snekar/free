@@ -9,6 +9,9 @@ $cgray:#ccc;
 .foot{
     width: 100%;
     height: 6em; 
+    position:fixed;
+    left:0;top:0;
+    z-index: 999;
     line-height: 6em;
     padding: 0 1em;   
     background: $zcolor;
@@ -34,7 +37,13 @@ $cgray:#ccc;
     }
 }
 .bar{
+    background: $white;
+    width: 100%;
+    height: 4em;
     display: flex;
+    position:fixed;
+    left:0;top:6em;
+    z-index: 999;
     li{
         text-align: center;
         width: 100%;
@@ -120,7 +129,14 @@ $cgray:#ccc;
         }
     }
 }
+//.gd{
+//  z-index: 999;
+//  width: 100%;
+//  position: fixed;left: 0;top: 0;
+//}
 
+@import "yybd","search","ddbox";
 
-@import "yybd","search";
-
+.kdq{
+    width: 100%;height: 10em;
+}
